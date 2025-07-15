@@ -1,0 +1,135 @@
+.container {
+    max-width: 1700px;
+    padding: 0 50px;
+    margin: 0 auto;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+
+/* header */
+
+.header {
+    margin-top: 25px;
+    border-bottom: 1px solid #e1e1e1;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+}
+
+
+.header_inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.logo span {
+    color: #4D36DB;
+}
+
+.exit {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+
+/* body */
+
+.content_inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.menu {
+    max-width: 400px;
+}
+
+.lesson-list {
+    font-size: 18px;
+    font-weight: 500;
+    list-style: none;
+    padding: 0;
+
+}
+
+.lesson-list li {
+    padding: 15px 20px;
+    border-radius: 14px;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 70px;
+    cursor: pointer;
+}
+
+.lesson-list li::before {
+    content: "";
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 7px;
+    height: 7px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background: transparent;
+}
+
+.lesson-list li.active {
+    background-color: #e6f435;
+    /* ярко-жёлтый фон */
+}
+
+.lesson-list li.active::before {
+    background-color: white;
+}
+
+.content_games {
+    position: relative;
+    border-top: 1px solid #e1e1e1;
+    border-left: 1px solid #e1e1e1;
+    padding-top: 34px;
+    padding-left: 34px;
+}
+
+.content_games_img {
+    width: 100%;
+}
+
+.arrow {
+    position: absolute;
+    top: 580px;
+    right: 50px;
+}
+
+.class-switch {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.switch-btn {
+  padding: 10px 20px;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s, color 0.3s;
+}
+
+.switch-btn:hover,
+.switch-btn.active {
+  background-color: #4D36DB;
+  color: #fff;
+  border-color: #4D36DB;
+}
