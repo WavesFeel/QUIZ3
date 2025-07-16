@@ -1,135 +1,541 @@
-.container {
-    max-width: 1700px;
-    padding: 0 50px;
-    margin: 0 auto;
-}
+    .container {
+        max-width: 1700px;
+        padding: 0 50px;
+        margin: 0 auto;
+    }
 
-body {
-    font-family: "Montserrat", sans-serif;
-}
-
-
-/* header */
-
-.header {
-    margin-top: 25px;
-    border-bottom: 1px solid #e1e1e1;
-    padding-bottom: 25px;
-    margin-bottom: 25px;
-}
+    body {
+        font-family: "Montserrat", sans-serif;
+    }
 
 
-.header_inner {
-    display: flex;
-    justify-content: space-between;
-}
+    /* header */
 
-.logo {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 700;
-    font-size: 20px;
-}
-
-.logo span {
-    color: #4D36DB;
-}
-
-.exit {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-}
+    .header {
+        margin-top: 25px;
+        border-bottom: 1px solid #e1e1e1;
+        padding-bottom: 25px;
+        margin-bottom: 25px;
+    }
 
 
-/* body */
+    .header_inner {
+        display: flex;
+        justify-content: space-between;
+    }
 
-.content_inner {
-    display: flex;
-    justify-content: space-between;
-    gap: 25px;
-}
+    .logo {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 700;
+        font-size: 20px;
+    }
 
-.menu {
-    max-width: 400px;
-}
+    .logo span {
+        color: #4D36DB;
+    }
 
-.lesson-list {
-    font-size: 18px;
-    font-weight: 500;
-    list-style: none;
-    padding: 0;
+    .exit {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+    }
 
-}
 
-.lesson-list li {
-    padding: 15px 20px;
-    border-radius: 14px;
-    margin-bottom: 10px;
-    position: relative;
-    padding-left: 70px;
-    cursor: pointer;
-}
+    /* body */
 
-.lesson-list li::before {
-    content: "";
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 7px;
-    height: 7px;
-    border: 1px solid black;
-    border-radius: 50%;
-    background: transparent;
-}
+    .content_inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 25px;
+        align-items: stretch;
+    }
 
-.lesson-list li.active {
-    background-color: #e6f435;
-    /* ярко-жёлтый фон */
-}
+    .menu,
+    .content_games {
+        flex: 1;
+    }
 
-.lesson-list li.active::before {
-    background-color: white;
-}
+    .menu {
+        max-width: 400px;
+    }
 
-.content_games {
-    position: relative;
-    border-top: 1px solid #e1e1e1;
-    border-left: 1px solid #e1e1e1;
-    padding-top: 34px;
-    padding-left: 34px;
-}
+    .lesson-list {
+        font-size: 18px;
+        font-weight: 500;
+        list-style: none;
+        padding: 0;
 
-.content_games_img {
-    width: 100%;
-}
+    }
 
-.arrow {
-    position: absolute;
-    top: 580px;
-    right: 50px;
-}
+    .lesson-list li {
+        padding: 15px 20px;
+        border-radius: 14px;
+        margin-bottom: 10px;
+        position: relative;
+        padding-left: 70px;
+        cursor: pointer;
+    }
 
-.class-switch {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-}
+    .lesson-list li::before {
+        content: "";
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 7px;
+        height: 7px;
+        border: 1px solid black;
+        border-radius: 50%;
+        background: transparent;
+    }
 
-.switch-btn {
-  padding: 10px 20px;
-  background-color: #f4f4f4;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background 0.3s, color 0.3s;
-}
+    .lesson-list li.active {
+        background-color: #e6f435;
+        /* ярко-жёлтый фон */
+    }
 
-.switch-btn:hover,
-.switch-btn.active {
-  background-color: #4D36DB;
-  color: #fff;
-  border-color: #4D36DB;
-}
+    .lesson-list li.active::before {
+        background-color: white;
+    }
+
+    .content_games {
+        position: relative;
+        padding-bottom: 34px;
+        /* отступ для картинки */
+        border: 3px solid #582FF5;
+        border-radius: 20px;
+    }
+
+    .content_games_img {
+        position: absolute;
+        bottom: 0;
+        left: 34px;
+        /* или другое значение */
+        /* width: 450px; */
+    }
+
+    #Video1_4 {
+        position: absolute;
+        bottom: 50px;
+        left: 370px;
+        /* или другое значение */
+        /* width: 450px; */
+    }
+
+    .arrow {
+        position: absolute;
+        top: 580px;
+        right: 50px;
+    }
+
+    .class-switch {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+    }
+
+    .numbers {
+        position: absolute;
+        top: 40%;
+        left: 50px;
+    }
+
+    .switch-btn {
+        padding: 10px 20px;
+        background-color: #f4f4f4;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: background 0.3s, color 0.3s;
+    }
+
+    .switch-btn:hover,
+    .switch-btn.active {
+        background-color: #4D36DB;
+        color: #fff;
+        border-color: #4D36DB;
+    }
+
+
+    .q {
+        position: absolute;
+        width: 170px;
+    }
+
+    #q1 {
+        position: absolute;
+        right: 75%;
+        bottom: 70%;
+    }
+
+    #q2 {
+        position: absolute;
+        right: 75%;
+        bottom: 40%;
+    }
+
+    #q3 {
+        position: absolute;
+        right: 75%;
+        bottom: 10%;
+    }
+
+    #q4 {
+        position: absolute;
+        right: 5%;
+        bottom: 70%;
+    }
+
+    #q5 {
+        position: absolute;
+        right: 5%;
+        bottom: 40%;
+    }
+
+    #q6 {
+        position: absolute;
+        right: 5%;
+        bottom: 10%;
+    }
+
+    /* Левая колонка */
+    .question-1 {
+        top: 40px;
+        left: -190px;
+    }
+
+    .question-2 {
+        top: 50%;
+        transform: translateY(-50%);
+        left: -190px;
+    }
+
+    .question-3 {
+        bottom: 40px;
+        left: -190px;
+    }
+
+    /* Правая колонка */
+    .question-4 {
+        top: 40px;
+        right: -190px;
+    }
+
+    .question-5 {
+        top: 50%;
+        transform: translateY(-50%);
+        right: -190px;
+    }
+
+    .question-6 {
+        bottom: 40px;
+        right: -190px;
+    }
+
+    .content_games {
+
+        /* width: 100%; */
+        height: 100%;
+        border: 3px solid #582FF5;
+        border-radius: 20px;
+    }
+
+    .content_games_inner {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        align-items: center;
+    }
+
+    .content_games_inner {
+        margin-top: 35px;
+    }
+
+    .test {
+        text-align: center;
+        color: #fff;
+        padding: 40px 200px;
+        background-color: #4D36DB;
+        border-radius: 20px;
+        margin-bottom: 30px;
+    }
+
+
+    .game-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 элемента в строке */
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .game-item {
+        text-align: center;
+        color: #fff;
+        font-family: "Montserrat", sans-serif;
+        font-size: 18px;
+        transition: transform 0.3s ease;
+    }
+
+    .game-item:hover {
+        transform: scale(1.05);
+    }
+
+    .content_games_inner2 {
+        display: flex;
+    }
+
+    .Video5_4 {
+        width: 300px;
+        margin-left: 400px;
+    }
+
+
+    #Video4_2 {
+        bottom: 130px;
+        left: 400px;
+    }
+
+    .slider-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .slider-block {
+        position: absolute;
+        width: 250px;
+        background: white;
+        border: 2px solid #4D36DB;
+        border-radius: 12px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .slider-block button {
+        background-color: #4D36DB;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 28px;
+        height: 28px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.2s ease;
+    }
+
+    .slider-block button:hover {
+        background-color: #3626aa;
+    }
+
+    .slider-block span {
+        display: inline-block;
+        /* min-width: 90px; */
+        text-align: center;
+    }
+
+    .tooltip-btn {
+        cursor: pointer;
+        font-size: 18px;
+        margin-left: 5px;
+        color: #4D36DB;
+    }
+
+    .tooltip-modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        border: 2px solid #4D36DB;
+        border-radius: 12px;
+        padding: 20px 30px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        z-index: 9999;
+        display: none;
+        max-width: 400px;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .tooltip-modal.active {
+        display: block;
+    }
+
+    .tooltip-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 9998;
+        display: none;
+    }
+
+    .tooltip-overlay.active {
+        display: block;
+    }
+
+    .steps-form input {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        margin-bottom: 10px;
+        border: 2px solid #4D36DB;
+        border-radius: 10px;
+    }
+
+    .steps-form input::placeholder {
+        color: #4D36DB;
+        font-weight: bold;
+    }
+
+    .algorithm-task {
+        display: flex;
+        align-items: flex-start;
+        padding: 30px;
+    }
+
+    @media (max-width: 768px) {
+        .algorithm-task {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .algorithm-right {
+            margin-top: 20px;
+        }
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    .start-test-btn,
+    .submit-test-btn,
+    .next-lesson-btn {
+        padding: 12px 20px;
+        background-color: #4D36DB;
+        color: #fff;
+        border: none;
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s;
+        margin-top: 10px;
+    }
+
+    .start-test-btn:hover,
+    .submit-test-btn:hover,
+    .next-lesson-btn:hover {
+        background-color: #3626aa;
+    }
+
+    .test-block label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: 500;
+    }
+
+    .test-block h3 {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+
+    .test-section {
+        padding: 30px;
+    }
+
+
+    .tooltip-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        display: none;
+        z-index: 999;
+    }
+
+    .tooltip-modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        z-index: 1000;
+        max-width: 400px;
+        text-align: center;
+        display: none;
+    }
+
+    /* когда активны */
+    .tooltip-modal.active,
+    .tooltip-overlay.active {
+        display: block;
+    }
+
+
+
+
+    .binary-check-task {
+        position: absolute;
+        top: 440px;
+        left: 135px;
+        /* margin: 40px auto; */
+        border-radius: 16px;
+        max-width: 600px;
+        text-align: center;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .binary-check-task h2 {
+        margin-bottom: 20px;
+        color: #4D36DB;
+    }
+
+    .binary-check-task input {
+        padding: 12px 16px;
+        font-size: 18px;
+        border-radius: 10px;
+        border: 2px solid #4D36DB;
+        width: 60%;
+        margin-bottom: 20px;
+    }
+
+    .binary-check-task button {
+        padding: 12px 20px;
+        background-color: #4D36DB;
+        color: #fff;
+        border: none;
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .binary-check-task button:hover {
+        background-color: #3626aa;
+    }
+
+    .binary-result {
+        margin-top: 15px;
+        font-weight: bold;
+    }

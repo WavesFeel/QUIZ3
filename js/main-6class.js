@@ -38,7 +38,7 @@ const lessonConfig = {
   2: { count: 9 },
   3: { count: 9 },
   4: { count: 10 },
-  5: { count: 10 },
+  5: { count: 8 },
   6: { count: 11 }
 };
 
@@ -120,3 +120,140 @@ classButtons.forEach(btn => {
 });
 
 
+function syncHeights() {
+  setTimeout(() => {
+    const menu = document.querySelector('.menu');
+    const content = document.querySelector('.content_games');
+    if (menu && content) {
+      content.style.height = 'auto';
+      content.style.height = menu.offsetHeight + 'px';
+    }
+  }, 100);
+}
+
+window.addEventListener('load', syncHeights);
+window.addEventListener('resize', syncHeights);
+
+document.addEventListener("DOMContentLoaded", () => {
+  let testPassed = false;
+
+  const testForm = document.getElementById("testForm");
+  const testResult = document.getElementById("testResult");
+  const startTestBtn = document.getElementById("startTestBtn");
+  const testBlock = document.getElementById("testBlock");
+
+  // Показываем тест при клике
+if (startTestBtn && testBlock) {
+  startTestBtn.addEventListener("click", () => {
+    startTestBtn.style.display = "none";
+    testBlock.style.display = "block";
+
+    // ⬇️ Прокрутка вниз к тесту
+    testBlock.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+}
+
+
+  // Проверка теста
+  if (testForm && testResult) {
+    testForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const answers = {
+        q1: "25",
+        q2: "no",
+        q3: "shock"
+      };
+
+      let correct = 0;
+      let total = Object.keys(answers).length;
+
+      for (let q in answers) {
+        const selected = testForm.querySelector(`input[name="${q}"]:checked`);
+        if (selected && selected.value === answers[q]) {
+          correct++;
+        }
+      }
+
+      if (correct === total) {
+        testPassed = true;
+        testForm.style.display = "none";
+        testResult.style.display = "block";
+      } else {
+        alert(`Ты ответил правильно на ${correct} из ${total} вопросов. Попробуй ещё раз.`);
+      }
+    });
+  }
+
+  // Переход к следующему уроку
+  const nextLessonBtn = document.getElementById("nextLessonBtn");
+  if (nextLessonBtn) {
+    nextLessonBtn.addEventListener("click", () => {
+      if (!testPassed) {
+        alert("Сначала пройди тест!");
+        return;
+      }
+
+      const currentPage = window.location.pathname.split("/").pop();
+      const isSixthClass = currentPage.startsWith("2");
+
+      const lessonMatch = currentPage.match(/(?:2)?lesson(\d+)/);
+      const lessonNum = lessonMatch ? parseInt(lessonMatch[1]) : 1;
+
+      const nextLesson = lessonNum + 1;
+      const nextPage = isSixthClass
+        ? `2lesson${nextLesson}.html`
+        : `lesson${nextLesson}.html`;
+
+      window.location.href = nextPage;
+    });
+  }
+});
+
+
+const sliders = {
+  slider1: ["Процессор", "Охлаждение", "Радиатор"],
+  slider2: ["Оперативная память", "SSD", "HDD"],
+  slider3: ["Видеокарта", "Сетевая карта", "Звуковая карта"],
+  slider4: ["Блок питания", "UPS", "Инвертор"],
+  slider5: ["Материнская плата", "Чипсет", "BIOS"],
+  slider6: ["Корпус", "Кулеры", "USB-порты"]
+};
+
+function createSlider(id, options) {
+  const container = document.getElementById(id);
+  if (!container) return; // <-- защита от ошибки
+
+  let index = 0;
+
+  container.innerHTML = `
+    <button class="prev">◀</button>
+    <span class="component">${options[index]}</span>
+    <button class="next">▶</button>
+    <span class="tooltip-btn" data-id="${id}">❓</span>
+  `;
+
+  const label = container.querySelector('.component');
+  container.querySelector('.prev').onclick = () => {
+    index = (index - 1 + options.length) % options.length;
+    label.textContent = options[index];
+  };
+  container.querySelector('.next').onclick = () => {
+    index = (index + 1) % options.length;
+    label.textContent = options[index];
+  };
+
+  const tooltipBtn = container.querySelector('.tooltip-btn');
+  tooltipBtn.addEventListener("click", () => {
+    const text = tooltips[id] || "Описание недоступно.";
+    const modal = document.getElementById("tooltipModal");
+    const overlay = document.getElementById("tooltipOverlay");
+    modal.innerText = text;
+    modal.classList.add("active");
+    overlay.classList.add("active");
+  });
+}
+
+
+
+Object.entries(sliders).forEach(([id, options]) => createSlider(id, options));
