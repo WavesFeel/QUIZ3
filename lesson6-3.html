@@ -49,19 +49,68 @@
                     </ul>
 
                 </div>
-                <div class="content_games">
-                    <img src="images/Video6_3.png" alt="" class="content_games_img">
-                    <!-- <img src="images/arrow.png" alt="" class="arrow"> -->
+                 <div class="content_games">
+                    <div class="slider-wrapper">
+                        <!-- Левые блоки -->
+                        <div class="slider-block" id="slider1" style="top: 40px; left: 100px;">
+                            <button class="prev">◀</button>
+                            <span class="component">Процессор</span>
+                            <button class="next">▶</button>
+                            <span class="tooltip-btn" data-id="slider1">❓</span>
+                        </div>
+                        <div class="slider-block" id="slider2"
+                            style="top: 50%; left: 100px; transform: translateY(-50%);">
+                            <button class="prev">◀</button>
+                            <span class="component">Оперативная память</span>
+                            <button class="next">▶</button>
+                            <span class="tooltip-btn" data-id="slider2">❓</span>
+                        </div>
+                        <div class="slider-block" id="slider3" style="bottom: 40px; left: 100px;">
+                            <button class="prev">◀</button>
+                            <span class="component">Видеокарта</span>
+                            <button class="next">▶</button>
+                            <span class="tooltip-btn" data-id="slider3">❓</span>
+                        </div>
+
+                        <!-- Центральное изображение -->
+                        <img src="images/Video6_3.png" alt="" class="content_games_img" id="Video4_2" />
+
+                        <!-- Правые блоки -->
+                        <div class="slider-block" id="slider4" style="top: 40px; right: 100px;">
+                            <button class="prev">◀</button>
+                            <span class="component">Блок питания</span>
+                            <button class="next">▶</button>
+                            <span class="tooltip-btn" data-id="slider4">❓</span>
+                        </div>
+                        <div class="slider-block" id="slider5"
+                            style="top: 50%; right: 100px; transform: translateY(-50%);">
+                            <button class="prev">◀</button>
+                            <span class="component">Материнская плата</span>
+                            <button class="next">▶</button>
+                            <span class="tooltip-btn" data-id="slider5">❓</span>
+                        </div>
+                        <div class="slider-block" id="slider6" style="bottom: 40px; right: 100px;">
+                            <button class="prev">◀</button>
+                            <span class="component">Корпус</span>
+                            <button class="next">▶</button>
+                            <span class="tooltip-btn" data-id="slider6">❓</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Подсказка -->
+    <div class="tooltip-overlay" id="tooltipOverlay"></div>
+    <div class="tooltip-modal" id="tooltipModal"></div>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/jquery.fancybox.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/help.js"></script>
 </body>
 
 </html>
